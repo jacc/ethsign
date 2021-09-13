@@ -12,10 +12,17 @@ window.addEventListener("load", async () => {
         method: "eth_requestAccounts",
       });
       address = addresses[0];
-    } catch (error) {}
-  }
+      document.getElementById(
+        "wallet"
+      ).innerHTML = `wallet connected: ${address}`;
+    } catch (error) {
+      document.getElementById(
+        "wallet"
+      ).innerHTML = `wallet connection error, refresh the page and try again`;
 
-  document.getElementById("wallet").innerHTML = `wallet connected: ${address}`;
+      document.getElementById("form").innerHTML = ``;
+    }
+  }
 });
 
 function sign() {
