@@ -15,6 +15,7 @@ window.addEventListener("load", async () => {
       document.getElementById(
         "wallet"
       ).innerHTML = `wallet connected: ${address}`;
+      document.getElementById("form").style["visibility"] = "";
     } catch (error) {
       document.getElementById(
         "wallet"
